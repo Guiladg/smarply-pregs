@@ -13,9 +13,13 @@ export async function getPregunta(req: Request, res: Response) {
 
 	// Load html for scrapping
 	const $ = load(html);
-	const htmlData = $('.ui-pdp-container--pdp').html();
+	const htmlData = $('.ui-pdp-container--pdp');
+	$('.ui-pdp-container__row--main-actions').remove();
+	$('.ui-pdp-container__row--buy-benefits').remove();
+	$('.ui-qadb__make-question-sa').remove();
+	$('.ui-pdp-quick-access__container').remove();
 
-	pregunta.publicacion.htmlData = htmlData;
+	pregunta.publicacion.htmlData = htmlData.html();
 
 	console.log('pregunta:', pregunta);
 	res.send(pregunta);

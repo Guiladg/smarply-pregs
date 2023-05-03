@@ -1,0 +1,10 @@
+.ui-pdp-container--column-right {
+	margin: 0;
+}
+.ui-vip-core-container--content-left {
+	margin: 0;
+	width: auto;
+}
+.ui-pdp-gallery__figure {
+	max-width: calc(100% - 100px);
+}
