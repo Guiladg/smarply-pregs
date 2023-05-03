@@ -5,8 +5,6 @@ import { load } from 'cheerio';
 export async function getPregunta(req: Request, res: Response) {
 	// Find a random pregunta
 	const pregunta = await Pregunta.createQueryBuilder('pregunta').innerJoinAndSelect('pregunta.publicacion', 'publicacion').orderBy('RANDOM()').getOne();
-	// Remove foreign reference from publicacion
-	delete pregunta.publicacion.preguntas;
 
 	// Scrap publicacion html from MeLi
 	// Get html from url
