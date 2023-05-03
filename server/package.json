@@ -42,6 +42,9 @@
          "glob": "7.2.3"
       }
    },
+   "engines": {
+      "node": ">=18"
+   },
    "scripts": {
       "build": "rimraf build & tsc & copyfiles package.json build/",
       "start": "set debug=* && ts-node-dev --inspect --trace-warnings --respawn ./src/index.ts"
