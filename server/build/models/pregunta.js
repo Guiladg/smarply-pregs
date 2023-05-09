@@ -19,6 +19,8 @@ let Pregunta = class Pregunta extends typeorm_1.BaseEntity {
     pregId;
     texto;
     publicacion;
+    resPublicacion;
+    resFormulario;
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
@@ -36,6 +38,14 @@ __decorate([
     (0, typeorm_1.ManyToOne)(() => publicacion_1.default, { eager: true }),
     __metadata("design:type", publicacion_1.default)
 ], Pregunta.prototype, "publicacion", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true, default: null }),
+    __metadata("design:type", Boolean)
+], Pregunta.prototype, "resPublicacion", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true, default: null }),
+    __metadata("design:type", Boolean)
+], Pregunta.prototype, "resFormulario", void 0);
 Pregunta = __decorate([
     (0, typeorm_1.Entity)('pregunta'),
     (0, typeorm_1.Unique)(['pregId'])
