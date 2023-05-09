@@ -15,4 +15,10 @@ export default class Pregunta extends BaseEntity {
 
 	@ManyToOne(() => Publicacion, { eager: true })
 	publicacion: Publicacion;
+
+	@Column({ nullable: true, default: null })
+	resPublicacion: boolean;
+
+	@Column({ nullable: true, default: null })
+	resFormulario: boolean;
 }

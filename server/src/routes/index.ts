@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getPregunta } from '../controller';
+import { getPregunta, setResultado } from '../controller';
 import scrapAll from '../scrapper';
 
 const routes = Router();
@@ -12,5 +12,8 @@ routes.post('/scrap', [], scrapAll);
 
 // Get random question
 routes.get('/pregunta', [], getPregunta);
+
+// Set pregunta results
+routes.post('/resultado/:id([0-9]+)', [], setResultado);
 
 export default routes;
