@@ -4,6 +4,9 @@ import scrapAll from '../scrapper';
 
 const routes = Router();
 
+// Nothing
+routes.get('/', (req, res, next) => res.send('API ok'));
+
 // Start scrapping process
 routes.post('/scrap', [], scrapAll);
 

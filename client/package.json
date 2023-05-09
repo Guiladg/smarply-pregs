@@ -27,7 +27,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "rimraf ./build & react-scripts build",
-    "build:staging": "rimraf ./build & env-cmd -f .env.staging react-scripts build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
