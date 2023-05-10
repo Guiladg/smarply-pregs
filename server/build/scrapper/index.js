@@ -22,7 +22,12 @@ async function scrapCategoria(url) {
     // Scrap each item
     for (const link of links) {
         const url = $(link).parent().attr('href');
-        scrapPublicacion(url);
+        try {
+            scrapPublicacion(url);
+        }
+        catch (e) {
+            console.info('Error', e);
+        }
     }
 }
 async function scrapPublicacion(url) {
