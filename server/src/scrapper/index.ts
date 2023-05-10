@@ -20,7 +20,7 @@ async function scrapCategoria(url: string): Promise<void> {
 	// Find all links to items
 	const links = $('.shops__item-title');
 
-	// Scrap questions for each item
+	// Scrap each item
 	for (const link of links) {
 		const url = $(link).parent().attr('href');
 		scrapPublicacion(url);
@@ -36,6 +36,8 @@ async function scrapPublicacion(url: string): Promise<void> {
 
 	// Create URL for retrieving questions
 	//? const url = 'https://articulo.mercadolibre.com.ar/noindex/questions/MLA' + MeLiId;
+
+	console.info('Scrapping:', url);
 
 	// Get html from url
 	const response = await fetch(url);
