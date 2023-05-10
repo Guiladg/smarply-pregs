@@ -19,7 +19,7 @@ async function scrapCategoria(url) {
     const $ = (0, cheerio_1.load)(html);
     // Find all links to items
     const links = $('.shops__item-title');
-    // Scrap questions for each item
+    // Scrap each item
     for (const link of links) {
         const url = $(link).parent().attr('href');
         scrapPublicacion(url);
@@ -33,6 +33,7 @@ async function scrapPublicacion(url) {
     }
     // Create URL for retrieving questions
     //? const url = 'https://articulo.mercadolibre.com.ar/noindex/questions/MLA' + MeLiId;
+    console.info('Scrapping:', url);
     // Get html from url
     const response = await fetch(url);
     const html = await response.text();
